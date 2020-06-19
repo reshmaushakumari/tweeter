@@ -1,29 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-    </nav>
+  <!-- External CSS for Bungee and Source sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@600&display=swap"
+    rel="stylesheet">
 
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+
+
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+
+  <!--Composer Character counter JS-->
+  <script src="/scripts/composer-char-counter.js"></script>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span class="navTitle">TWEETER</span>
+    <span class="navEdit">Write a new tweet</span>
+    <div class="doubleArrow">
+      <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+    </div>
+  </nav>
+  <!-- Header page contains picture and name -->
+  <header class="top-header">
+    <div class="img-header">
+      <img src="/images/profile-hex.png">
+    </div>
+    <br>
+    <div class="name-header">
+      <h2>Reshma Ushakumari</h2>
+    </div>
+  </header>
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <section class="new-tweet">
+      <div class="errorMsg" id="errorMsg">
+      </div>
+      <label for="tweet-text">What are you humming about?</label>
+      <form action="/tweets" method="POST">
+        <textarea class="tweetarea" name="text" id="tweet-text"></textarea>
+        <div class="footerSection">
+          <button class="buttonSection" type="submit">TWEET</button>
+          <output name="counter" class="counterblack" for="tweet-text" id="counter">140</output>
+        </div>
+      </form>
+    </section>
+    <br>
+    <!-- Display all the available tweets -->
+    <section class="tweetList">
+
+    </section>
+  </main>
+  <br>
+</body>
+
 </html>

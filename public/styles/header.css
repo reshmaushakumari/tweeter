@@ -1,0 +1,58 @@
+body {
+  padding-top: 25px;
+}
+
+main {
+  padding-top: 120px;
+}
+
+body .top-header {
+  height: 400px;
+  width: 100%;
+  background-color: darkgoldenrod;
+  background-image: url("https://www.transparenttextures.com/patterns/binding-dark.png");
+  margin-top: 120px;
+  margin-left: 10px;
+}
+
+header .img-header{
+  display: flex;
+  justify-content: center;
+  border: 10px;
+}
+
+header .name-header{
+  display: flex; 
+  justify-content: center;
+}
+
+main section .tweetList-header{
+  height: auto;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #f4f1ec;
+  background-image: none;
+}
+
+main section p{
+  word-wrap: break-word;
+}
+
+main section article footer{
+  height: auto;
+}
+main section article hr {
+  width: 99%;
+  border: 1px solid black;
+}
+
+@media only screen and (min-width: 1024px) {
+
+  body .top-header {
+   width: 30%;
+   float: left;
+ }
+ 
+}
