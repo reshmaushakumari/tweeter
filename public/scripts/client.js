@@ -9,18 +9,15 @@ const escape =  function(str) {
   return div.innerHTML;
 }
 
+//Function to create new tweet element
 const createTweetElement = function(tweet) {
-  // const postDate = new Date() - new Date(tweet.created_at))/1000)/60;
+
+  //Calculate date in days
   const postDate = new Date(tweet.created_at);
   const currentDate = new Date();
-
-  let Difference_In_Time = currentDate.getTime() - postDate.getTime(); 
-  
-// To calculate the no. of days between two dates 
-let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24); 
-
-Difference_In_Days = Difference_In_Days.toFixed(0); 
-
+  let Difference_In_Time = currentDate.getTime() - postDate.getTime();   
+  let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24); 
+  Difference_In_Days = Difference_In_Days.toFixed(0); 
 
   const $tweet = $(
   `<article class="tweetContainer">
@@ -42,11 +39,8 @@ Difference_In_Days = Difference_In_Days.toFixed(0);
       <hr>
       <footer>
         ${Difference_In_Days} days ago 
-        <i class="fa fa-flag">&nbsp;<i class="fa fa-retweet">&nbsp;<i class="fa fa-heart"></i></i></i>
-        
-        
+        <i class="fa fa-flag">&nbsp;<i class="fa fa-retweet">&nbsp;<i class="fa fa-heart"></i></i></i> 
       </footer>
-
     </article>`);
 
   return $tweet;
@@ -65,9 +59,18 @@ Difference_In_Days = Difference_In_Days.toFixed(0);
 
 $(document).ready(function () {
 
+  //Hide the error message box while initial loading
   $("#errorMsg").hide();
 
-   function loadTweets() {
+  //To go back the focus to tweetarea and scroll top of the page
+  $(".doubleArrow").on('click',function(event){
+    $( ".tweetarea" ).focus();
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    return false;
+  })
+
+  //Function for loading all tweets
+  function loadTweets() {
     $.ajax({
         url: 'http://localhost:8080/tweets',
         method: 'GET',
