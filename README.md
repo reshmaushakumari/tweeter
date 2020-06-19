@@ -15,3 +15,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Final Product
+
+!["Screenshot of Desktop view"](https://github.com/reshmaushakumari/tweeter/blob/master/docs/Screen%20Shot%202020-06-19%20at%204.20.19%20PM.png)
+!["Screenshot of Mobile view"](https://github.com/reshmaushakumari/tweeter/blob/master/docs/Screen%20Shot%202020-06-19%20at%204.21.03%20PM.png)
